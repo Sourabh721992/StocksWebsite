@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.inactiveNavLink {
+  color: #525252;
+  text-decoration: none;
+  margin-right: 3vw;
+}
+
+.activeNavLink {
+  color: #007bff !important;
+  text-decoration: none;
+  margin-right: 3vw;
+}

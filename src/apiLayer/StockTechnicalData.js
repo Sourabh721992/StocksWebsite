@@ -10,7 +10,7 @@ const getStockCandleData = async (days, stockName) => {
   
   let response = await client.post(apiNames.getStockCandleData, data);
 
-  console.log(response);
+  return response;
 }
 
 export { getStockCandleData };

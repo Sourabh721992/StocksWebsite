@@ -1,5 +1,5 @@
 const apiNames = {
-  getStockCandleData: 'getStockCandleData',
+  getStockCandleData: 'technicalAnalysis',
 }
 
 export { apiNames } 
