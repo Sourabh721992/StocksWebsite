@@ -9,7 +9,7 @@ class Dashboard extends Component {
     super();
     this.state = {
       days: 7,
-      dropdownData: [ { value: '7', label: '7 days'}, { value: '15', label: '15 days'}, { value: '30', label: '30 days'}],
+      dropdownData: [  { value: '7', label: '7 days'}, { value: '10', label: '10 days'}, { value: '15', label: '15 days'}, { value: '30', label: '30 days'}],
       arrBullishStocks:[],
       arrBearishStocks:[]
     }
@@ -46,7 +46,7 @@ class Dashboard extends Component {
           <Col>
             <DropdownList id="dropdownDays"
                       data = { this.state.dropdownData }
-                      defaultValue = { { value: '7', label: '7 days'} }
+                      defaultValue = { { value: '10', label: '10 days'} }
                       title = "Select Days"
                       dropdownHandler = { this.dropdownHandler }
             >

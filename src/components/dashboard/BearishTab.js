@@ -22,9 +22,9 @@ class BearishTab extends Component {
                   <CompanyCard 
                                 index = {index} 
                                 code = {stock.stock}
-                                name = "Infosys Private Limited"
-                                stockPrice = "$ 1711"
-                                stockPricePercentChange = "-1.83%"
+                                name = {stock.name}
+                                stockPrice =  {stock.price}
+                                stockPricePercentChange = {`${Number(stock.percentCh).toFixed(2)}%`}
                                 score = {stock.priority}
                                 strength = {stock.fundamental_trend}
                                 mode = "bear"
