@@ -22,15 +22,20 @@ class HeaderBar extends Component {
     return (
       <div className="border-bottom shadow-sm">
         <Row>
-          <Col xs ={1} sm={1} md={1} lg={1} xl={1}>
-            <img
-                src={require("../../images/Logo/Logo.png")}
-                style={{ height: "1rem" }}
-                alt=""
-            ></img>
-          </Col>
-          <Col xs ={9} sm={9} md={9} lg={9} xl={9}>
-            <h3 className="text-primary ml-3 mt-2">Stock Crunch</h3>
+          <Col xs ={12} sm={12} md={12} lg={12} xl={12}>
+            <div className="d-flex flex-row bd-highlight mt-2">
+              <div className="bd-highlight">
+                <img
+                    className="ml-2"
+                    src={require("../../images/Logo/Logo.png").default}
+                    style={{ height: "3rem" }}
+                    alt=""
+                ></img>
+              </div>
+              <div className="bd-highlight">
+                <h2 className="text-primary ml-2 align-middle">Stock Crunch</h2>
+              </div>
+            </div>
           </Col>
         </Row>
         <Row>
