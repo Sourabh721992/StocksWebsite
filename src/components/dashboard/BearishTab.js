@@ -28,6 +28,7 @@ class BearishTab extends Component {
                                 score = {stock.priority}
                                 strength = {stock.fundamental_trend}
                                 mode = "bear"
+                                candleData = {stock.CandleData}
                   >
                   </CompanyCard>
                 </Col>)

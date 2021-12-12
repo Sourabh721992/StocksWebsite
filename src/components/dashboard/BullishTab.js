@@ -5,14 +5,12 @@ import CompanyCard from '../Layout/Dashboard/CompanyCard';
 class BullishTab extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
     }
   }
   
   render() {
     let { stocks } = this.props
-    console.log(stocks);
     return (
       <div id="divBullishTab" className="container-fluid">
         <Row>
@@ -29,6 +27,7 @@ class BullishTab extends Component {
                                 score = {stock.priority}
                                 strength = {stock.fundamental_trend}
                                 mode = "bull"
+                                candleData = {stock.CandleData}
                   >
                   </CompanyCard>
                 </Col>)
