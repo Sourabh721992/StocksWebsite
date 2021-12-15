@@ -18,7 +18,7 @@ class BearishTab extends Component {
         {
           stocks.map((stock, index) => {
               return(
-                <Col key={index} xs ={12} sm={6} md={6} lg={3} xl={3} className="mt-4">
+                <Col key={index} xs ={12} sm={6} md={6} lg={3} xl={3} className="mt-2">
                   <CompanyCard 
                                 index = {index} 
                                 code = {stock.stock}

@@ -144,7 +144,7 @@ function CompanyCard(props) {
             </Col>
           </Row>
         </Card.Body>
-        <Card.Footer className="mt-n3" style={{backgroundColor:"#FFFFFF"}}>
+        <Card.Footer className="mt-n2" style={{backgroundColor:"#FFFFFF"}}>
         <Row>
             <Col xs ={12} sm={12} md={12} lg={12} xl={12} className="text-right">
               <LinkButton id={"btnFundamentalPattern"}
