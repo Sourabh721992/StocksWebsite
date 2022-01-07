@@ -6,6 +6,7 @@ import HeaderBar from "./components/Layout/HeaderBar";
 import Footer from './components/Layout/Footer';
 import './App.css';
 import './css/Layout.css';
+import './css/AutoCompleteTextbox.css';
 
 function App() {
   return (

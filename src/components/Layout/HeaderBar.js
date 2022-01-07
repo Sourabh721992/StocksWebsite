@@ -4,6 +4,8 @@ import {RiStockLine} from 'react-icons/ri';
 import { IoIosPeople } from 'react-icons/io';
 import { Gi3DStairs } from 'react-icons/gi';
 import Link from '../Controls/NavLink/NavLink';
+import AutoTextBox from '../Controls/AutoTextBox/AutoTextBox';
+import { arrStocks } from '../../objects/stocks';
 
 
 class HeaderBar extends Component {
@@ -30,6 +32,9 @@ class HeaderBar extends Component {
                     style={{ width: "9.5rem" }}
                     alt=""
                 ></img>
+              </div>
+              <div className="ml-auto p-2 mr-2">
+                <AutoTextBox suggestions= {arrStocks}></AutoTextBox>
               </div>
             </div>
           </Col>
