@@ -4,6 +4,7 @@ import {Row, Col} from 'react-bootstrap'
 import { getStockFundamentalData } from "../../apiLayer/StockFundamentalData";
 import CompanyCard from '../Layout/Fundamental/CompanyCard';
 import DropdownList from '../Controls/Dropdown/DropdownList';
+import {BsFilterCircleFill} from 'react-icons/bs';
 
 class Fundamental extends Component {
   constructor(props) {
@@ -38,22 +39,27 @@ class Fundamental extends Component {
     return (
       <div id="divFundamental">
         <ReactSpinner loading={this.state.loading}></ReactSpinner>
-        <Row className="mb-2 mt-3">
+        <Row className="mt-3">
           <Col xs ={2} sm={2} md={2} lg={2} xl={2}>
-            <h5 className="text-muted">
+            <h4 className="text-muted">
               Stocks
-            </h5>
+            </h4>
           </Col>
-          <Col xs ={5} sm={5} md={6} lg={7} xl={7}>
-          </Col>
-          <Col>
-            <DropdownList id="dropdownStocks"
-                      data = { this.state.dropdownData }
-                      defaultValue = { { value: 'strongFirst', label: 'Fundamentally Strong Stocks'}}
-                      // title = "Select Option"
-                      dropdownHandler = { this.dropdownHandler }
-            >
-            </DropdownList>
+          <Col xs ={10} sm={10} md={10} lg={10} xl={10}>
+            <div className="d-flex flex-row bd-highlight justify-content-end mt-1">
+              <div className="bd-highlight align-items-center">
+                <BsFilterCircleFill fontSize="2.3rem" color="#007bff"></BsFilterCircleFill>
+              </div>
+              <div className="bd-highlight ml-3">
+                <DropdownList id="dropdownStocks"
+                        data = { this.state.dropdownData }
+                        defaultValue = { { value: 'strongFirst', label: 'Fundamentally Strong Stocks'}}
+                        // title = "Select Option"
+                        dropdownHandler = { this.dropdownHandler }
+                >
+                </DropdownList>
+              </div>
+            </div>
           </Col>
         </Row>
         <Row>

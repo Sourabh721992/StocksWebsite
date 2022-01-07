@@ -6,7 +6,8 @@ import LabelCompanyName from '../../Controls/Labels/LabelCompanyName'
 import LabelStockPercentChange from '../../Controls/Labels/LabelStockPercentChange'
 import LabelSubHeading from '../../Controls/Labels/LabelSubHeading'
 import LabelGeneric from '../../Controls/Labels/LabelGeneric'
-import {ConvertStockParamsToShortHand} from '../../../commonFunctions/ConvertStockParamsToShorthand'
+import {convertStockParamsToShortHand, fetchUnitsOfStockParam} from '../../../commonFunctions/ConvertStockParamsToShorthand'
+// import {GrFormView} from 'react-icons/gr'
 
 function CompanyCard(props) {
   let {index, code, name, stockPrice, stockPricePercentChange, params} = props;
@@ -56,11 +57,12 @@ function CompanyCard(props) {
                       </Row>
                       <Row className="text-center mt-1">
                         <Col>
-                          <LabelSubHeading text={ConvertStockParamsToShortHand(param[0])}
-                                            id={"span" + ConvertStockParamsToShortHand(param[0])}
+                          <LabelSubHeading text={convertStockParamsToShortHand(param[0])}
+                                            id={"span" + convertStockParamsToShortHand(param[0])}
                                             index={index}
-                                            toolTip={param[0]}>
+                                            toolTip={`${param[0]} (Threshold Value ${param[3]}${fetchUnitsOfStockParam(param[0])})`}>
                           </LabelSubHeading>
+                          
                         </Col>
                       </Row>
                     </Col>
