@@ -3766,4 +3766,4 @@ const arrStocks = [
 ]
 
 
-export {stocks};
+export {arrStocks};
