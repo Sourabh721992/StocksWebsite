@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Row, Col } from 'react-bootstrap';
 import {RiStockLine} from 'react-icons/ri';
-import { IoIosPeople } from 'react-icons/io';
+// import { IoIosPeople } from 'react-icons/io';
 import { Gi3DStairs } from 'react-icons/gi';
 import Link from '../Controls/NavLink/NavLink';
 import AutoTextBox from '../Controls/AutoTextBox/AutoTextBox';
@@ -15,12 +15,13 @@ class HeaderBar extends Component {
       relativeUrl: window.location.pathname,
       labelTechnical: 'Technical',
       labelFundamental: 'Fundamental',
-      labelSocial: 'Social'
+      // labelSocial: 'Social'
     }
   }
 
   render() {
-    let { labelTechnical, labelFundamental, labelSocial } = this.state;
+    // let { labelTechnical, labelFundamental, labelSocial } = this.state;
+    let { labelTechnical, labelFundamental } = this.state;
     return (
       <div className="border-bottom shadow-sm">
         <Row>
@@ -34,7 +35,9 @@ class HeaderBar extends Component {
                 ></img>
               </div>
               <div className="ml-auto p-2 mr-2">
-                <AutoTextBox suggestions= {arrStocks}></AutoTextBox>
+                <AutoTextBox suggestions= {arrStocks}
+                             redirect={true}
+                             uri="/stock/{id}"></AutoTextBox>
               </div>
             </div>
           </Col>
@@ -51,10 +54,10 @@ class HeaderBar extends Component {
                            icon= {<Gi3DStairs size={20}/> }
                            text = { labelFundamental } >
                   </Link>
-                  <Link to={ "/" + labelSocial.toLowerCase() }
+                  {/* <Link to={ "/" + labelSocial.toLowerCase() }
                            icon= {<IoIosPeople size={20}/> }
                            text = { labelSocial } >
-                  </Link>
+                  </Link> */}
                 </Nav>
             </Navbar>
           </Col>

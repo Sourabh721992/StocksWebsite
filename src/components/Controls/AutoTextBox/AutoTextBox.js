@@ -1,7 +1,11 @@
+// Redirect functionality added in component, on on click
+// Other functionalities onclick will be added later on as per requirement
+
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import {Form, InputGroup} from 'react-bootstrap';
-import {HiOutlineSearch} from 'react-icons/hi'
+import {HiOutlineSearch} from 'react-icons/hi';
+import {withRouter} from 'react-router-dom';
 
 
 class AutoTextBox extends Component {
@@ -40,7 +44,7 @@ class AutoTextBox extends Component {
           String(suggestions[i].id).toLowerCase().indexOf(userInput.toLowerCase()) > -1 ||
           String(suggestions[i].val).toLowerCase().indexOf(userInput.toLowerCase()) > -1
         ) {
-        filteredSuggestions.push(suggestions[i].val);
+        filteredSuggestions.push(suggestions[i]);
         countSuggestions++;
       }
       if(countSuggestions === 5)
@@ -60,8 +64,13 @@ class AutoTextBox extends Component {
       activeSuggestion: 0,
       filteredSuggestions: [],
       showSuggestions: false,
-      userInput: e.currentTarget.innerText
+      userInput: ""
     });
+    
+    if(this.props.redirect === true) {
+      let selectedStock = this.state.filteredSuggestions.filter(suggestion => suggestion.val === e.currentTarget.innerText)[0];
+      this.props.history.push(String(this.props.uri).replace("{id}", selectedStock.id).replace("{val}", selectedStock.val));
+    }
   };
 
   onKeyDown = (e) => {
@@ -72,8 +81,7 @@ class AutoTextBox extends Component {
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion]
-
+        userInput: filteredSuggestions[activeSuggestion].val
       });
     }
     // User pressed the up arrow
@@ -123,7 +131,7 @@ class AutoTextBox extends Component {
 
                 return (
                   <li className={className} key={index} onClick={onClick}>
-                    {suggestion}
+                    {suggestion.val}
                   </li>
                 );
               })
@@ -162,4 +170,4 @@ class AutoTextBox extends Component {
   }
 }
 
-export default AutoTextBox;
+export default withRouter(AutoTextBox);

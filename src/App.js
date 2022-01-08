@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Fundamental from './components/Fundamental/Fundamental';
+import Stock from './components/Stock/Stock';
 import HeaderBar from "./components/Layout/HeaderBar";
 import Footer from './components/Layout/Footer';
 import './App.css';
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" component={ Dashboard }></Route>
             <Route exact path="/technical" component={ Dashboard }></Route>
             <Route exact path="/fundamental" component={ Fundamental }></Route>
+            <Route path="/stock" component={ Stock }></Route>
           </div>
           <Footer></Footer>
       </Router>
